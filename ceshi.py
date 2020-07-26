@@ -31,7 +31,7 @@ url_list = url_list.replace(']','')
 
 url_list = url_list.strip(',').split(',')
 # print(url_list)
-'''
+
 d = 'D:\\B\\'
 for url in url_list:
     try:
@@ -60,6 +60,6 @@ for url in url_list:
 
     except:
 
-        print("图片获取失败")'''
+        print("图片获取失败")
 
 
