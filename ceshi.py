@@ -10,7 +10,7 @@ import os
 number = int(input('请输入要下载的图片数量：'))
 r18yn = int(input('是否要r18，需要填1，不需要填0，混合填2：'))
 word = input('请输入图片关键词：（我不知道能不能多关键词，自己试试%20或+')
-size = input('是否要压缩图片，是就填True，否就填False：[不想要就删了，默认false]')
+#size = input('是否要压缩图片，是就填True，否就填False：[不想要就删了，默认false]')
 
 data = {
     "apikey":'600830785ec3a270d87e31',  #添加apikey
