@@ -3,13 +3,25 @@ import requests
 import re
 import time
 import os
+print('README!!!!!\nREADME!!!!!\nREADME!!!!!\n说明：图片返回数量，范围为1到10，不提供 APIKEY 时固定为1\nr18参数 0为否，1为是，2为混合\n不指定关键词填0，若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果\n是否使用 master_1200 缩略图，以节省流量或提升加载速度，默认为不使用，为False')
 number = int(input('请输入要下载的图片数量：'))
-r18yn = int(input('是否要r18，需要填1，不需要填0，混合填2：'))
-word = input('请输入图片关键词（我不知道能不能多关键词，自己试试%20或+)：')
-# size = input('是否要压缩图片，是就填True，否就填False：')
+if number<1 or number>10 :
+    print('瞎几把输，给你一张便宜你了')
+    number = 1
+r18yn = int(input('是否r18：'))
+if r18yn<0 or r18yn>2 :
+    print('?')
+    r18yn = 0
+
+word = input('请输入图片关键词：')
+print(type(word))
+if word =='0':
+    word=''
+
+# size = input('是否要压缩图片：')
 
 data = {
-    "apikey":'',  #添加apikey
+    "apikey":'600830785ec3a270d87e31',  #添加apikey
     'r18':r18yn,   #添加r18参数 0为否，1为是，2为混合
     'keyword':word,   #若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果
     'num':number,          #一次返回的结果数量，范围为1到10，不提供 APIKEY 时固定为1
@@ -27,11 +39,14 @@ url_list = url_list.replace(']','')
 
 url_list = url_list.strip(',').split(',')
 # print(url_list)
-
+i = 0
 d = 'D:\\B\\'
 for url in url_list:
+    path = d + url.split('/')[-1]
+    i += 1
+    print('正在下载第%d张图片' % i)
+
     try:
-        path = d + url.split('/')[-1]
 
         if not os.path.exists(d):
             os.mkdir(d)
@@ -57,5 +72,5 @@ for url in url_list:
     except:
 
         print("图片获取失败")
-
+print('图片全部下载完成')
 
