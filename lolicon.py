@@ -3,7 +3,7 @@ import requests
 import re
 import time
 import os
-print('README!!!!!\nREADME!!!!!\nREADME!!!!!\n说明：图片返回数量，范围为1到10，不提供 APIKEY 时固定为1，只有几次测试机会\nr18参数 0为否，1为是，2为混合\n不指定关键词填0，若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果\n是否使用 master_1200 缩略图，以节省流量或提升加载速度，0为不使用，默认不使用（玛德，没搞懂怎么用的，这玩意先不设置了）')
+print('README!!!!!\nREADME!!!!!\nREADME!!!!!\n说明：图片返回数量，范围为1到10，不提供 APIKEY 时固定为1，只有几次测试机会\nr18参数 0为否，1为是，2为混合\n不指定关键词填0，若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果\n是否使用 master_1200 缩略图，以节省流量或提升加载速度，0为不使用，默认不使用（玛德，没搞懂怎么用的，这玩意先不设置了）\n图片默认放在d盘的setu文件夹里')
 number = int(input('请输入要下载的图片数量：'))
 if number<1 or number>10 :
     print('瞎几把输，给你一张便宜你了')
@@ -42,7 +42,7 @@ url_list = url_list.replace(']','')
 url_list = url_list.strip(',').split(',')
 # print(url_list)
 i = 0
-d = 'D:\\B\\'
+d = 'D:\\setu\\'
 for url in url_list:
     path = d + url.split('/')[-1]
     i += 1
