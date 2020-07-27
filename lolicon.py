@@ -21,7 +21,7 @@ if word =='0':
 # size = input('是否要压缩图片：')
 
 data = {
-    "apikey":'600830785ec3a270d87e31',  #添加apikey
+    "apikey":'',  #添加apikey
     'r18':r18yn,   #添加r18参数 0为否，1为是，2为混合
     'keyword':word,   #若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果
     'num':number,          #一次返回的结果数量，范围为1到10，不提供 APIKEY 时固定为1
