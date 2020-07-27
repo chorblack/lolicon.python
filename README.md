@@ -1,5 +1,5 @@
 # lolicon.python
-啊，学了一个多星期python
+啊，学了一个多星期python\n
 用python写的提取loliconAPI的垃圾代码
 
 lolicon需要代理才能运行（？为什么
