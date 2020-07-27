@@ -3,7 +3,7 @@ import requests
 import re
 import time
 import os
-print('README!!!!!\nREADME!!!!!\nREADME!!!!!\n说明：图片返回数量，范围为1到10，不提供 APIKEY 时固定为1\nr18参数 0为否，1为是，2为混合\n不指定关键词填0，若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果\n是否使用 master_1200 缩略图，以节省流量或提升加载速度，默认为不使用，为False')
+print('README!!!!!\nREADME!!!!!\nREADME!!!!!\n说明：图片返回数量，范围为1到10，不提供 APIKEY 时固定为1\nr18参数 0为否，1为是，2为混合\n不指定关键词填0，若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果\n是否使用 master_1200 缩略图，以节省流量或提升加载速度，0为不使用，默认不使用（玛德，没搞懂怎么用的，这玩意先不设置了）')
 number = int(input('请输入要下载的图片数量：'))
 if number<1 or number>10 :
     print('瞎几把输，给你一张便宜你了')
@@ -12,20 +12,22 @@ r18yn = int(input('是否r18：'))
 if r18yn<0 or r18yn>2 :
     print('?')
     r18yn = 0
-
 word = input('请输入图片关键词：')
-print(type(word))
+
 if word =='0':
     word=''
-
 # size = input('是否要压缩图片：')
-
+# if size =='0':
+#     size = 'false'
+# else:
+#     size =  'true'
+# print(size)
 data = {
     "apikey":'',  #添加apikey
     'r18':r18yn,   #添加r18参数 0为否，1为是，2为混合
     'keyword':word,   #若指定关键字，将会返回从插画标题、作者、标签中模糊搜索的结果
     'num':number,          #一次返回的结果数量，范围为1到10，不提供 APIKEY 时固定为1
-    'size1200':False     #是否使用 master_1200 缩略图，以节省流量或提升加载速度
+    'size1200':True     #是否使用 master_1200 缩略图，以节省流量或提升加载速度
     }
 
 response = requests.get('https://api.lolicon.app/setu/',params=data)
